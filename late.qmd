@@ -8,7 +8,7 @@ format: html
 
 The Biden Administration has taken significant steps to protect old growth and mature forests in the United States. Their Executive Order [‘Strengthening the Nation’s Forests, Communities, and Local Economies’](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/04/22/executive-order-on-strengthening-the-nations-forests-communities-and-local-economies/) mandates the Department of Agriculture and the Department of the Interior to inventory and publicly disclose information about old-growth and mature forests on Federal lands. This initiative has sparked interest among non-profit organizations and local governments, particularly in the Central Upper Peninsula.
 
-Here we explore 'late-succession' habitat as defined by LANDFIRE in the [Biophysical Settings models and descriptions](https://landfire.gov/bps-models.php) which is specifically defined for each BpS (historical ecosystem).
+Here we explore 'late-succession' habitat as defined by LANDFIRE in the [Biophysical Settings (BpS) models and descriptions](https://landfire.gov/bps-models.php) which is specifically defined for each BpS (historical ecosystem).
 
 *Note: late succession does not necessarily equal 'mature' or 'old growth', and is widely defined for some types.*
 
