@@ -29,7 +29,7 @@ This map was created by assigning 'fire spotting probabilities' to the various c
 
 <br>
 
-```{r, echo=FALSE, out.width="85%", fig.align='left', fig.cap="Wildfire Exposure Risk for assessment area."}
+```{r, echo=FALSE, out.width="100%",  fig.cap="Wildfire Exposure Risk for assessment area."}
 
 knitr::include_graphics("images/cup_wer.jpg")
 
@@ -59,11 +59,11 @@ wfer <- wfer %>%
                           80,
                           100),
                         labels = c(
-                          "0 - 20",
-                          "20 - 40",
-                          "40 - 60",
-                          "60 - 80",
-                          "80 - 100")
+                          "<= 20 (Very Low: Mimimally Exposed to Wildfire Hazard)",
+                          "21 - 40 (Low: Infrequently Exposed to Wildfire Hazard)",
+                          "41- 60 (Moderate: Somewhat Exposed to Wildfire Hazard)",
+                          "61- 80 (High: Commonly Exposed to Wildfire Hazard)",
+                          "81- 100 (Extreme: Fully Exposed to Wildfire Hazard)")
   ))
 
 
@@ -86,8 +86,7 @@ wfer_quantiles_chart <-
     x = "",
     y = "Total acres per category",
     title = "Wildfire Exposure Risk",
-    subtitle = "Colors match map",
-    caption = "Categorized; 0 - 20 is the lowest risk category, 80 -100 the highest.") +
+    subtitle = "Colors match map") +
   scale_fill_manual(values = c(
     "#FFFFFF",
     "#F3F583",
@@ -112,11 +111,36 @@ wfer_quantiles_chart <-
   #                            0, # bottom
   #                            0, #left
   #                            "cm")) + 
-  expand_limits(y = 4000000) 
+  expand_limits(y = 4500000) 
 
 
 wfer_quantiles_chart
 ```
+
+
+*Note: While the chart suggests that the distribution of landscape wildfire potential in our area may be generally low, the local responsibilities for management and protection can still be significant even on relatively small portions of the landscape (Ziel, personal comment).*
+
+### Recent fire activity
+
+For context we explored recent fire activity in the area by downloading and mapping the [Spatial wildfire occurance data for the United States, 1992-2020 (Short et al., 2022)](https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.6).  We then generated a heatmap as a way to help understand where the greatest concentration of fires were during that time period.
+
+**We found:**
+
+* There were 2,336 fire occurrences recorded. 
+* Fires ranged from > 1 acre to ~21,000 acres. 
+* Annual acres burned ranged from 42 (1997) to >24,000 (2012).  
+* The heatmap indicates concentrations of fire activity around the Gwinn, Gladstone, Iron Mountain, Cedarville and Wallace, MI areas. 
+
+
+::: {#fig-elephants layout-ncol=2}
+
+![Wildfire occurances 1992-2020. Dots are sized proportionally to fire size,which ranged from > 1 acre to < 24,000 acres .](images/cup_wer_fire_occurances.jpg){}
+
+![Heatmap of fire occurances. We mapped five classes, with the least of the 2 removed for clarity. ](images/foc_heatmap.jpg){#fig-heatmap}
+
+Recent fires in the assessment area
+:::
+
 
 
 
@@ -146,6 +170,10 @@ There are other ways to view and map wildfire risk, including the [Wildfire Risk
 knitr::include_graphics("images/wfrc.png")
 
 ```
+
+
+>The Wildfire Exposure assessment relies primarily on landscape classification and the assigned flammability hazard for each Existing Vegetation Type. Alternativily, the Wildfire Risk to Communities  incorporates weather and climate conditions, fuel model comparisons, and historical ignition data to predict burn probability and potential fire intensity. Although both assessments may appear similar, a notable difference emerges in the southern area adjacent to Lake Michigan. It's crucial to recognize the limitations of fire behavior models, especially when dealing with varied inputs that are generalized. As climate change progresses, relying on sparse ignition records, broad weather data, and generalized fuel flammability assessments, particularly in lake states, can lead to significant gaps and exaggerations in the analysis (Ziel, personal communication).
+
 
 <br>
 

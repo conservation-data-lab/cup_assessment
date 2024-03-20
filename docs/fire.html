@@ -123,6 +123,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#map-of-wildfire-exposure-risk" id="toc-map-of-wildfire-exposure-risk" class="nav-link" data-scroll-target="#map-of-wildfire-exposure-risk">Map of Wildfire Exposure Risk</a></li>
   <li><a href="#bar-chart-of-wildfire-exposure-risk" id="toc-bar-chart-of-wildfire-exposure-risk" class="nav-link" data-scroll-target="#bar-chart-of-wildfire-exposure-risk">Bar chart of Wildfire Exposure Risk</a></li>
+  <li><a href="#recent-fire-activity" id="toc-recent-fire-activity" class="nav-link" data-scroll-target="#recent-fire-activity">Recent fire activity</a></li>
   <li><a href="#zooming-in-to-ki-sawyer" id="toc-zooming-in-to-ki-sawyer" class="nav-link" data-scroll-target="#zooming-in-to-ki-sawyer">Zooming in to KI Sawyer</a></li>
   </ul></li>
   <li><a href="#another-view-wildfire-risk-to-communities" id="toc-another-view-wildfire-risk-to-communities" class="nav-link" data-scroll-target="#another-view-wildfire-risk-to-communities">Another view-Wildfire Risk to Communities</a></li>
@@ -175,11 +176,11 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="map-of-wildfire-exposure-risk">Map of Wildfire Exposure Risk</h3>
 <p>This map was created by assigning ‘fire spotting probabilities’ to the various current ecosystems of the area as mapped in the <a href="https://landfire.gov/evt.php">LANDFIRE Existing Vegetation Type</a> dataset. After those assignments were made, we ‘blended’ the values for each particular spot with the surrounding area to better represent potential transmission of fire.</p>
 <p><br></p>
-<div class="cell" data-layout-align="left">
+<div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/cup_wer.jpg" class="img-fluid figure-img" style="width:85.0%"></p>
+<p><img src="images/cup_wer.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption class="figure-caption">Wildfire Exposure Risk for assessment area.</figcaption>
 </figure>
 </div>
@@ -192,6 +193,42 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <p><img src="fire_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="960"></p>
 </div>
+</div>
+<p><em>Note: While the chart suggests that the distribution of landscape wildfire potential in our area may be generally low, the local responsibilities for management and protection can still be significant even on relatively small portions of the landscape (Ziel, personal comment).</em></p>
+</section>
+<section id="recent-fire-activity" class="level3">
+<h3 class="anchored" data-anchor-id="recent-fire-activity">Recent fire activity</h3>
+<p>For context we explored recent fire activity in the area by downloading and mapping the <a href="https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.6">Spatial wildfire occurance data for the United States, 1992-2020 (Short et al., 2022)</a>. We then generated a heatmap as a way to help understand where the greatest concentration of fires were during that time period.</p>
+<p><strong>We found:</strong></p>
+<ul>
+<li>There were 2,336 fire occurrences recorded.</li>
+<li>Fires ranged from &gt; 1 acre to ~21,000 acres.</li>
+<li>Annual acres burned ranged from 42 (1997) to &gt;24,000 (2012).<br>
+</li>
+<li>The heatmap indicates concentrations of fire activity around the Gwinn, Gladstone, Iron Mountain, Cedarville and Wallace, MI areas.</li>
+</ul>
+<div id="fig-elephants" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cup_wer_fire_occurances.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Wildfire occurances 1992-2020. Dots are sized proportionally to fire size,which ranged from &gt; 1 acre to &lt; 24,000 acres .</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-heatmap" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/foc_heatmap.jpg" class="img-fluid figure-img" data-ref-parent="fig-elephants"></p>
+<figcaption class="figure-caption">(a) Heatmap of fire occurances. We mapped five classes, with the least of the 2 removed for clarity.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Recent fires in the assessment area</figcaption><p></p>
+</figure>
 </div>
 </section>
 <section id="zooming-in-to-ki-sawyer" class="level3">
@@ -226,6 +263,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>The Wildfire Exposure assessment relies primarily on landscape classification and the assigned flammability hazard for each Existing Vegetation Type. Alternativily, the Wildfire Risk to Communities incorporates weather and climate conditions, fuel model comparisons, and historical ignition data to predict burn probability and potential fire intensity. Although both assessments may appear similar, a notable difference emerges in the southern area adjacent to Lake Michigan. It’s crucial to recognize the limitations of fire behavior models, especially when dealing with varied inputs that are generalized. As climate change progresses, relying on sparse ignition records, broad weather data, and generalized fuel flammability assessments, particularly in lake states, can lead to significant gaps and exaggerations in the analysis (Ziel, personal communication).</p>
+</blockquote>
 <p><br></p>
 </section>
 <section id="historical-fire-regimes" class="level2">
