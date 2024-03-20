@@ -38,12 +38,13 @@ knitr::include_graphics("images/cup_wer.jpg")
 
 ### Bar chart of Wildfire Exposure Risk 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=7}
 
 
 ## da packages
 library(tidyverse)
 library(scales)
+library(stringr)
 
 ## read data
 wfer <- read_csv("data/wfer.csv", col_types = cols(acres = col_number()))
@@ -111,7 +112,8 @@ wfer_quantiles_chart <-
   #                            0, # bottom
   #                            0, #left
   #                            "cm")) + 
-  expand_limits(y = 4500000) 
+  expand_limits(y = 4500000) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) 
 
 
 wfer_quantiles_chart
