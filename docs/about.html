@@ -139,6 +139,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#area-of-interest" id="toc-area-of-interest" class="nav-link" data-scroll-target="#area-of-interest">Area of Interest</a></li>
   <li><a href="#general-gis" id="toc-general-gis" class="nav-link" data-scroll-target="#general-gis">General GIS</a></li>
   <li><a href="#input-raster-datasets" id="toc-input-raster-datasets" class="nav-link" data-scroll-target="#input-raster-datasets">Input Raster Datasets</a></li>
+  <li><a href="#tab-specific-methods" id="toc-tab-specific-methods" class="nav-link" data-scroll-target="#tab-specific-methods">Tab-specific Methods</a></li>
   <li><a href="#software-and-tools" id="toc-software-and-tools" class="nav-link" data-scroll-target="#software-and-tools">Software and Tools</a></li>
   </ul></li>
   </ul>
@@ -232,22 +233,36 @@ ul.task-list li input[type="checkbox"] {
 <p>We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful. To create the polygon by which we completed our analysis, we:</p>
 <ol type="1">
 <li>Selected the 6 central-most counties from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">Census Bureau County Dataset (500m)</a>. Exported this data as a shapefile.</li>
-<li>Used the ‘Select by Location’ tool with the U.S. HUC 8 Watershed Boundary from <a href="https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/">Data Basin</a> and the 6 selected CUP counties as the ‘Selecting Features’. Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 4269).</li>
+<li>Used the ‘Select by Location’ tool with the U.S. HUC 8 Watershed Boundary from <a href="https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/">Data Basin</a> and the 6 selected CUP counties as the ‘Selecting Features’. Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070).</li>
 </ol>
 </section>
 <section id="general-gis" class="level3">
 <h3 class="anchored" data-anchor-id="general-gis">General GIS</h3>
-<p>For initial data processing for all tabs we clipped raster datasets to the area of interest using the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm">‘Clip Raster’</a>{target-‘none’} tool. We retained the LANDFIRE standard projection (see <a href="https://www.landfire.gov/faqs" target="none">LANDFIRE Standard Projections</a>) and resolution. This work was completed in <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview" target="none">ArcGIS Pro</a>.</p>
+<p>For initial data processing for all tabs we clipped raster datasets to the area of interest using the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm" target="none">‘Clip Raster’</a> tool. We retained the LANDFIRE standard projection (see <a href="https://www.landfire.gov/faqs" target="none">LANDFIRE Standard Projections</a>) and resolution. This work was completed in <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview" target="none">ArcGIS Pro</a>.</p>
 </section>
 <section id="input-raster-datasets" class="level3">
 <h3 class="anchored" data-anchor-id="input-raster-datasets">Input Raster Datasets</h3>
 <ul>
-<li><a href="https://landfire.gov/vegetation/evt">LANDFIRE Existing Vegetation Type - Ecological Systems</a> for the ‘Ecosystems’ and ‘Wildfire Exposure’ tabs.</li>
-<li><a href="https://landfire.gov/vegetation/bps" target="none">LANDFIRE Biophysical Settings spatial data</a> for the ‘Ecosystems’ and ‘Late Succession’ tabs.</li>
+<li><a href="https://landfire.gov/vegetation/evt">LANDFIRE Existing Vegetation Type - Ecological Systems</a> (EVT) for the ‘Ecosystems’ and ‘Wildfire Exposure’ tabs.</li>
+<li><a href="https://landfire.gov/vegetation/bps" target="none">LANDFIRE Biophysical Settings spatial data</a> (BpS) for the ‘Ecosystems’ and ‘Late Succession’ tabs.</li>
 <li><a href="https://landfire.gov/vegetation/bps-models">LANDFIRE Biophysical Settings Reference Conditions Table</a> for the ‘Late Succession’ tab.</li>
-<li><a href="https://landfire.gov/vegetation/sclass" target="none">LANDFIRE Succession Class</a></li>
-<li></li>
+<li><a href="https://landfire.gov/vegetation/sclass" target="none">LANDFIRE Succession Class</a> (SCLS) for the ‘Late Succession’ tab.</li>
 </ul>
+<p>All clipped datasets are available in the ‘data/spatial’ directory of the repository located <a href="https://github.com/conservation-data-lab/cup_assessment" target="none">here</a>.</p>
+</section>
+<section id="tab-specific-methods" class="level3">
+<h3 class="anchored" data-anchor-id="tab-specific-methods">Tab-specific Methods</h3>
+<p><strong>Ecosystems:</strong> After datasets were clipped as noted above, we used <a href="https://www.qgis.org/" target="none">QGIS</a> for cartography, limiting the legends in the maps for clarity. The attribute tables were exported for the charts. Attribute tables are located in the ‘data/’ directory of the repository located <a href="https://github.com/conservation-data-lab/cup_assessment" target="none">here</a>, with the names ‘bps_aoi_attributes.csv’ and ‘evt_aoi_attributes.csv’.</p>
+<p>Making of the chord diagram was a bit more involved, utilizing the following steps:</p>
+<ol type="1">
+<li>Combined the BpS and EVT spatial datasets using the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm" target="none">‘Combine’</a> tool in ArcGIS Pro.</li>
+<li>Used the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm">‘Join field’</a> tool in ArcGIS pro to attach relevant attributes.</li>
+<li>Used a Pivot Table in Excel to format and clean data to make the final chord dataset (see bps2evt_chord.csv file in the ‘data/’ directory of this <a href="https://github.com/conservation-data-lab/cup_assessment" target="none">repo</a>).</li>
+</ol>
+<p>R code for all charts available in the ‘current.qmd’ file of this repo.</p>
+<p><strong>Late succession habitat:</strong> There are essentially two components of this analysis: 1) estimating reference amounts of late-succession, and quantifying current amounts of late succession. For this analysis we used the methods and code of <a href="https://thenatureconservancy.github.io/lf_late_mz2/" target="none">Kelly and Swaty, 2024.</a>.</p>
+<p><strong>Wildfire Exposure:</strong></p>
+<p>This method was orignially developed and documented by <a href="https://link.springer.com/article/10.1007/s10980-020-01173-8" target="none">Beverly et al., 2021</a>, and adapted by us as documented in <a href="wfe_methods.docx" target="none">this document</a>.</p>
 </section>
 <section id="software-and-tools" class="level3">
 <h3 class="anchored" data-anchor-id="software-and-tools">Software and Tools</h3>

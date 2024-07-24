@@ -62,18 +62,40 @@ Silas grew up in Madison, Wisconsin and moved to Marquette, Michigan in the fall
 We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful.  To create the polygon by which we completed our analysis, we:
 
 1. Selected the 6 central-most counties from the [Census Bureau County Dataset (500m)](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html).  Exported this data as a shapefile.
-2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/) and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 4269). 
+2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/) and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070). 
 
 ### General GIS
-For initial data processing for all tabs we clipped raster datasets to the area of interest using the ['Clip Raster'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target-'none'} tool.  We retained the LANDFIRE standard projection (see [LANDFIRE Standard Projections](https://www.landfire.gov/faqs){target='none'}) and resolution.  This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview){target='none'}.
+For initial data processing for all tabs we clipped raster datasets to the area of interest using the ['Clip Raster'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target='none'} tool.  We retained the LANDFIRE standard projection (see [LANDFIRE Standard Projections](https://www.landfire.gov/faqs){target='none'}) and resolution.  This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview){target='none'}.
 
 ### Input Raster Datasets
 
-* [LANDFIRE Existing Vegetation Type - Ecological Systems](https://landfire.gov/vegetation/evt) for the 'Ecosystems' and 'Wildfire Exposure' tabs.
-* [LANDFIRE Biophysical Settings spatial data](https://landfire.gov/vegetation/bps){target='none'} for the 'Ecosystems' and 'Late Succession' tabs.
+* [LANDFIRE Existing Vegetation Type - Ecological Systems](https://landfire.gov/vegetation/evt) (EVT) for the 'Ecosystems' and 'Wildfire Exposure' tabs.
+* [LANDFIRE Biophysical Settings spatial data](https://landfire.gov/vegetation/bps){target='none'} (BpS) for the 'Ecosystems' and 'Late Succession' tabs.
 * [LANDFIRE Biophysical Settings Reference Conditions Table](https://landfire.gov/vegetation/bps-models) for the 'Late Succession' tab.
-* [LANDFIRE Succession Class](https://landfire.gov/vegetation/sclass){target='none'}
-* 
+* [LANDFIRE Succession Class](https://landfire.gov/vegetation/sclass){target='none'} (SCLS) for the 'Late Succession' tab. 
+
+All clipped datasets are available in the 'data/spatial' directory of the repository located [here](https://github.com/conservation-data-lab/cup_assessment){target='none'}.  
+
+### Tab-specific Methods
+
+**Ecosystems:** 
+After datasets were clipped as noted above, we used [QGIS](https://www.qgis.org/){target='none'} for cartography, limiting the legends in the maps for clarity. The attribute tables were exported for the charts.  Attribute tables are located in the 'data/' directory of the repository located [here](https://github.com/conservation-data-lab/cup_assessment){target='none'}, with the names 'bps_aoi_attributes.csv' and 'evt_aoi_attributes.csv'.  
+
+Making of the chord diagram was a bit more involved, utilizing the following steps:
+
+1. Combined the BpS and EVT spatial datasets using the ['Combine'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm){target='none'} tool in ArcGIS Pro.
+2. Used the ['Join field'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm) tool in ArcGIS pro to attach  relevant attributes. 
+3. Used a Pivot Table in Excel to format and clean data to make the final chord dataset (see bps2evt_chord.csv file in the 'data/' directory of this [repo](https://github.com/conservation-data-lab/cup_assessment){target='none'}).
+
+R code for all charts available in the 'current.qmd' file of this repo.
+
+**Late succession habitat:** 
+There are essentially two components of this analysis: 1) estimating reference amounts of late-succession, and quantifying current amounts of late succession.  For this analysis we used the methods and code of [Kelly and Swaty, 2024.](https://thenatureconservancy.github.io/lf_late_mz2/){target='none'}.
+
+**Wildfire Exposure:**
+
+This method was orignially developed and documented by [Beverly et al., 2021](https://link.springer.com/article/10.1007/s10980-020-01173-8){target='none'}, and adapted by us as documented in [this document](wfe_methods.docx){target='none'}.
+
 
 
 
