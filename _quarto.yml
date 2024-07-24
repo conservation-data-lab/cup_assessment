@@ -18,6 +18,8 @@ website:
         text: Late Succession
       - href: fire.qmd
         text: Wildfire Exposure
+      - href: methods.qmd
+        text: Methods
       - href: about.qmd
         text: About
 

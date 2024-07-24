@@ -1,0 +1,13 @@
+---
+title: "Methods"
+---
+
+
+## Quick note about the analysis area, and software used
+
+We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful.  To create the polygon by which we completed our analysis, we:
+
+1. Selected the 6 central-most counties from the [Census Bureau County Dataset (500m)](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html).  Exported this data as a shapefile.
+2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/) and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 4269). 
+
+This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).  [R](https://www.r-project.org/), [R-Studio](https://posit.co/download/rstudio-desktop/) and [QGIS](https://qgis.org/en/site/) were also used in the analyses. All code and datasets can be obtained by contacting [Randy Swaty](mailto:rswaty@tnc.org){target="blank"}.
