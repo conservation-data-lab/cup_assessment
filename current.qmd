@@ -18,13 +18,18 @@ library(tidygraph)
 
 ## Patterns on the current landscape
 
-Using [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php) data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022.  
+![Photo of autumn in the northern hardwoods, central UP, by Randy Swaty.](images/fall.jpg){style="float:right; margin-left: 5%; fig-align:right; width:25%;" fig-alt="\"Photo of autumnal coniferous and deciduous trees where the deciduous trees are various shades of reds, oranges and yellows."}
+
+Using [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php) data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022.  For clarity all ecosystems not mapped. Lists and quantities of all ecosystems are available by contacting Randy Swaty (rswaty@tnc.org).  
+
+
 
 **We found:**
 
 * Almost all of the area is naturally vegetated, with ~ 5% classified as 'Agricultural' and ~2% classified as 'Developed'.  
-* Just over 1/4 of the CUP is classified as Northern Hardwoods Forest, and 1/4 as Alkaline Conifer-Hardwood Swamp.
+* Just over 1/4 of the CUP is classified as [Northern Hardwoods Forest](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.1207720/Acer_saccharum_-_Betula_alleghaniensis_-_Picea_glauca_Forest_Macrogroup){target='none'}, and 1/4 as [Alkaline Conifer-Hardwood Swamp](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.723030/Laurentian-Acadian_Alkaline_Conifer-Hardwood_Swamp){target='none'}.
 * In total, ~37% is typed in various 'riparian' ecosystems.
+* Broadly, the northern hardwoods forests are located more in the northern part of the region, with wetland/riparian types in the mid and southern parts.  [Jack pine-red pine](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.899362/Pinus_banksiana_-_Pinus_resinosa_-_Quercus_ellipsoidalis_Forest_Woodland_Alliance){target='none} types are scattered throughout. 
 
 
 ### Map of current ecosystems
@@ -72,7 +77,7 @@ evtChart
 <br>
 
 
-To learn more about the dataset, go to [https://landfire.gov/evt.php](https://landfire.gov/evt.php).  To explore descriptions of these types, vist the Terrestrial Ecological Systems [documentaton](https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf) by [NatureServe](https://www.natureserve.org/). 
+To learn more about the dataset, go to [https://landfire.gov/evt.php](https://landfire.gov/evt.php).  To explore descriptions of these types, vist the Terrestrial Ecological Systems [documentaton](https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf) by [NatureServe](https://www.natureserve.org/) and/or the hyperlinks above. 
 
 <br>
 
@@ -97,7 +102,7 @@ knitr::include_graphics("images/bps.jpg")
 
 <br> 
 
-Bar chart of historical ecosystems
+### Bar chart of historical ecosystems
 
 <br>
 
@@ -139,7 +144,7 @@ bpsChart
 
 *Historical information presented for context.  It does not necessarily equal a 'Desired Future Condition', and should be compared with current situation for trend exploration only.*
 
-To learn about the dataset, visit https://landfire.gov/bps.php , and to explore specific types, including descriptions, go to https://landfirereview.org/search.php. 
+To learn about the dataset, visit [https://landfire.gov/vegetation/bps](https://landfire.gov/vegetation/bps){target="none'} , and to explore specific types, including descriptions, go to [https://landfirereview.org/search.php](https://landfirereview.org/search.php){target='none'}. 
 
 <br>
 

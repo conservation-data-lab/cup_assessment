@@ -28,7 +28,7 @@ knitr::include_graphics("images/aoi.jpg")
 
 As anyone who lives in the central Upper Peninsula of Michigan knows, it's a place where temperatures can range from well below zero to above 100 degrees Fahrenheit (though that is rare), snowfall can total more than 200" in a single winter and where leaves are on the ground for longer than they are on trees.  
 
-![Photo of crosscountry skiier, central UP, by Randy Swaty.](images/winter.jpg){style="float:right; margin-left: 5%; fig-align:right; width:25%;" fig-alt="\"Photo of a crosscountry skiier beneath a mix of coniferous and deciduous trees."}
+![Photo of crosscountry skiier, central UP, by Randy Swaty.](images/winter.jpg){style="float:right; margin-left: 5%; fig-align:right; width:35%;" fig-alt="\"Photo of a crosscountry skiier beneath a mix of coniferous and deciduous trees."}
 
 The ecosystems range from very dry jack pine barrens to northern hardwoods (includes sugar maple and yellow birch trees) growing on relatively fertile and well-balanced soils to wetlands (such as alkaline swamps with cedars and tamarack).
 
@@ -37,6 +37,14 @@ Many of landscapes are very heterogeneous, meaning that you can easily walk, rid
 * fires historically 'cleaned' fire-adapted ecosystems such as the norther pine-oak system, periodically removing needles and branches (i.e., fuels) that accumulate on the forest floor.  Fire suppression halts this 'cleaning', leading to an accumulation of fuels.  Prescribed fire and some types of harvest can reduce fuel buildup.
 * road systems can alter water flow (hydrology) in multiple ways: 1) capturing and redistributing precipitation into ditches, 2) blocked flow when culverts are plugged, 3) increasing/decreasing water on either side of a road depending on natural direction of flow (so called 'damming effect') and 4) changes in temperature (which can lead to changes in organisms and chemical processes).
 * tree harvests can result in obvious effects depending on type of harvest including: altered species composition, overall tree height and canopy closure.  These changes can in turn impact soil development, understory species composition, wildlife habitat and fuels accumulation.
+
+We do not answer questions such as 'where should we do fuel reduction projects to reduce wildfire risk' or 'should we set-aside areas that will not be harvested' in this web report.  Rather, we present background information that might help managers with those and other related questions.  More specifically, we:
+
+1. Worked with planners from Marquette County to determine the 'area of interest'.
+2. Formatted, summarized and displayed freely available datasets to depict ecosystems past and present, late-succession habitat past and present, and wildfire exposure risk.
+3. Organized the information into this web report.
+
+*For more information on methods and input data see the 'About' page.*
 
 
 

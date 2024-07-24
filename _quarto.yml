@@ -13,13 +13,11 @@ website:
       - href: index.qmd
         text: Home
       - href: current.qmd
-        text: Current
+        text: Ecosystems
       - href: late.qmd
         text: Late Succession
       - href: fire.qmd
         text: Wildfire Exposure
-      - href: methods.qmd
-        text: Methods
       - href: about.qmd
         text: About
 

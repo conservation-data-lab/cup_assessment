@@ -56,3 +56,28 @@ Randy was responsible for the "Current" page, for deployment of the site, and wi
 Silas grew up in Madison, Wisconsin and moved to Marquette, Michigan in the fall of 2021 to pursue a degree in Fisheries and Wildlife Management at Northern Michigan University. After an internship with Oregon State University in the summer of 2023, he hopes to point his career in the direction of forestry in the coming years. He was introduced to the CDL after a short impromptu meeting with Randy. Outside of his career pursuit, Silas spends lots of time outside climbing, surfing, hiking and enjoys playing guitar as well. 
 
 
+## Methods
+
+### Area of Interest
+We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful.  To create the polygon by which we completed our analysis, we:
+
+1. Selected the 6 central-most counties from the [Census Bureau County Dataset (500m)](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html).  Exported this data as a shapefile.
+2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/) and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 4269). 
+
+### General GIS
+For initial data processing for all tabs we clipped raster datasets to the area of interest using the ['Clip Raster'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target-'none'} tool.  We retained the LANDFIRE standard projection (see [LANDFIRE Standard Projections](https://www.landfire.gov/faqs){target='none'}) and resolution.  This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview){target='none'}.
+
+### Input Raster Datasets
+
+* [LANDFIRE Existing Vegetation Type - Ecological Systems](https://landfire.gov/vegetation/evt) for the 'Ecosystems' and 'Wildfire Exposure' tabs.
+* [LANDFIRE Biophysical Settings spatial data](https://landfire.gov/vegetation/bps){target='none'} for the 'Ecosystems' and 'Late Succession' tabs.
+* [LANDFIRE Biophysical Settings Reference Conditions Table](https://landfire.gov/vegetation/bps-models) for the 'Late Succession' tab.
+* [LANDFIRE Succession Class](https://landfire.gov/vegetation/sclass){target='none'}
+* 
+
+
+
+
+
+### Software and Tools
+This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).  [R](https://www.r-project.org/), [R-Studio](https://posit.co/download/rstudio-desktop/) and [QGIS](https://qgis.org/en/site/) were also used in the analyses. All code and datasets can be obtained by contacting [Randy Swaty](mailto:rswaty@tnc.org){target="blank"}.

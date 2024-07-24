@@ -6,7 +6,11 @@ format: html
 
 ## Background and summary
 
+![Photo of a treefall gap with regeneration in northern hardwoods, western UP, by Randy Swaty.](images/nh_gap.jpg){style="float:right; margin-left: 5%; fig-align:right; width:25%;" fig-alt="\"Photo of a treefall gap where additional sunlight is promoting growth of young trees."}
+
 The Biden Administration has taken significant steps to protect old growth and mature forests in the United States. Their Executive Order [‘Strengthening the Nation’s Forests, Communities, and Local Economies’](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/04/22/executive-order-on-strengthening-the-nations-forests-communities-and-local-economies/) mandates the Department of Agriculture and the Department of the Interior to inventory and publicly disclose information about old-growth and mature forests on Federal lands. This initiative has sparked interest among non-profit organizations and local governments, particularly in the Central Upper Peninsula.
+
+
 
 Here we explore 'late-succession' habitat as defined by LANDFIRE in the [Biophysical Settings (BpS) models and descriptions](https://landfire.gov/bps-models.php) which is specifically defined for each BpS (historical ecosystem).
 
