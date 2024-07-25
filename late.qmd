@@ -28,7 +28,7 @@ Here we explore 'late-succession' habitat as defined by LANDFIRE in the [Biophys
 
 ```{r, echo=FALSE, out.width="90%", fig.align='left'}
 
-knitr::include_graphics("images/late_upland_current.png")
+knitr::include_graphics("images/upland.jpg")
 
 ```
 
@@ -39,7 +39,19 @@ knitr::include_graphics("images/late_upland_current.png")
 
 ```{r, echo=FALSE, out.width="90%", fig.align='left'}
 
-knitr::include_graphics("images/late_riparian_current.png")
+knitr::include_graphics("images/riparian.jpg")
+
+```
+
+## Late succession habitat: Sugarloaf Recreation Area
+
+One area of interest in the central Upper Peninsula is the Sugarloaf Recreation Area near Marquette.  It's dominated by northern hardwoods ecosystems, including the ['pine-hemlock-hardwood'](pine_hemlock_hardwood.docx) and ['northern hardwoods-hemlock'](northern_hardwoods_hemlock.docx) systems. We mapped no late succession habitat for the northern hardwoods-hemlock type; most of the late succession habitat in this area belongs to the pine-hemlock-hardwood system. As noted in this web report late-succession does not necessarily mean 'old-growth' which can have a more narrow definition.  Additionally, late-succession for this type is defined rather broadly: white pines, hemlocks and yellow birches greater than 10M tall, with canopy cover greater than 50%.
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='left'}
+
+knitr::include_graphics("images/sugarloaf.jpg")
 
 ```
 
