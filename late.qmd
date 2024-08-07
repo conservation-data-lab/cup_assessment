@@ -7,11 +7,6 @@ format: html
 ## Background and summary
 
 ![Photo of a treefall gap with regeneration in northern hardwoods, western UP, by Randy Swaty.](images/nh_gap.jpg){style="float:right; margin-left: 5%; fig-align:right; width:25%;" fig-alt="\"Photo of a treefall gap where additional sunlight is promoting growth of young trees."}
-
-The Biden Administration has taken significant steps to protect old growth and mature forests in the United States. Their Executive Order [‘Strengthening the Nation’s Forests, Communities, and Local Economies’](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/04/22/executive-order-on-strengthening-the-nations-forests-communities-and-local-economies/) mandates the Department of Agriculture and the Department of the Interior to inventory and publicly disclose information about old-growth and mature forests on Federal lands. This initiative has sparked interest among non-profit organizations and local governments, particularly in the Central Upper Peninsula.
-
-
-
 Here we explore 'late-succession' habitat as defined by LANDFIRE in the [Biophysical Settings (BpS) models and descriptions](https://landfire.gov/bps-models.php) which is specifically defined for each BpS (historical ecosystem).
 
 *Note: late succession does not necessarily equal 'mature' or 'old growth', and is widely defined for some types.*
@@ -328,3 +323,8 @@ This map most closely aligns with ours, identifying a substantial amount of the 
 * The datasets and models cover all lands, not just agency lands for example.
 * Late succession as defined in the LANDFIRE models and descriptions is 'highly-inclusive', and can serve to highlight areas for more detailed field examinations.
 * LANDFIRE's view of ecosystems includes natural disturbances (including Indigenous burning, wildfires, windthrow, etc.), which is in line with current ecological theory.  This is particularly important in disturbance-driven ecosystems such as the Northern Pine(-Oak) Forests which would have had frequent surface fires prior to European Settlement.  These fires resulted in a fair amount of 'Late-Open" successional habitat.  
+
+
+##  Current Context
+
+The Biden-Harris Administration released an Executive Order [‘Strengthening the Nation’s Forests, Communities, and Local Economies’](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/04/22/executive-order-on-strengthening-the-nations-forests-communities-and-local-economies/) which mandates the Department of Agriculture and the Department of the Interior to inventory and publicly disclose information about old-growth and mature forests on Federal lands. 

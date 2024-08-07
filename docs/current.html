@@ -79,6 +79,20 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/chorddiag-0.1.2.9000/chorddiag.js"></script>
 
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -148,7 +162,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#map-of-historical-ecosystems" id="toc-map-of-historical-ecosystems" class="nav-link" data-scroll-target="#map-of-historical-ecosystems">Map of historical ecosystems</a></li>
   <li><a href="#bar-chart-of-historical-ecosystems" id="toc-bar-chart-of-historical-ecosystems" class="nav-link" data-scroll-target="#bar-chart-of-historical-ecosystems">Bar chart of historical ecosystems</a></li>
   </ul></li>
-  <li><a href="#general-comparisons-another-way-to-explore" id="toc-general-comparisons-another-way-to-explore" class="nav-link" data-scroll-target="#general-comparisons-another-way-to-explore">General comparisons-another way to explore</a></li>
+  <li><a href="#for-the-so-inclined-other-ways-to-explore-change" id="toc-for-the-so-inclined-other-ways-to-explore-change" class="nav-link" data-scroll-target="#for-the-so-inclined-other-ways-to-explore-change">For the so-inclined: other ways to explore change</a>
+  <ul class="collapse">
+  <li><a href="#chord-diagram" id="toc-chord-diagram" class="nav-link" data-scroll-target="#chord-diagram">Chord Diagram</a></li>
+  </ul></li>
+  <li><a href="#sankey-diagram" id="toc-sankey-diagram" class="nav-link" data-scroll-target="#sankey-diagram">Sankey Diagram</a></li>
   </ul>
 </nav>
     </div>
@@ -182,13 +200,13 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Photo of autumn in the northern hardwoods, central UP, by Randy Swaty.</figcaption>
 </figure>
 </div>
-<p>Using <a href="https://landfire.gov/evt.php">LANDFIRE Existing Vegetation Type</a> data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022. For clarity all ecosystems not mapped. Lists and quantities of all ecosystems are available by contacting Randy Swaty (rswaty@tnc.org).</p>
+<p>Using <a href="https://landfire.gov/evt.php" target="none">LANDFIRE Existing Vegetation Type</a> data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022. For clarity most dominant ecosystems were mapped (ones that covered more than 5% of the landscape). Lists and quantities of all ecosystems are available by contacting Randy Swaty (rswaty@tnc.org).</p>
 <p><strong>We found:</strong></p>
 <ul>
 <li>Almost all of the area is naturally vegetated, with ~ 5% classified as ‘Agricultural’ and ~2% classified as ‘Developed’.<br>
 </li>
 <li>Just over 1/4 of the CUP is classified as <a href="https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.1207720/Acer_saccharum_-_Betula_alleghaniensis_-_Picea_glauca_Forest_Macrogroup" target="none">Northern Hardwoods Forest</a>, and 1/4 as <a href="https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.723030/Laurentian-Acadian_Alkaline_Conifer-Hardwood_Swamp" target="none">Alkaline Conifer-Hardwood Swamp</a>.</li>
-<li>In total, ~37% is typed in various ‘riparian’ ecosystems.</li>
+<li>In total, ~37% is typed as various ‘riparian’ ecosystems.</li>
 <li>Broadly, the northern hardwoods forests are located more in the northern part of the region, with wetland/riparian types in the mid and southern parts. <a href="https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.899362/Pinus_banksiana_-_Pinus_resinosa_-_Quercus_ellipsoidalis_Forest_Woodland_Alliance" target="'none">Jack pine-red pine</a> types are scattered throughout.</li>
 </ul>
 <section id="map-of-current-ecosystems" class="level3">
@@ -220,6 +238,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><br></p>
 <p>To learn more about the dataset, go to <a href="https://landfire.gov/evt.php">https://landfire.gov/evt.php</a>. To explore descriptions of these types, vist the Terrestrial Ecological Systems <a href="https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf">documentaton</a> by <a href="https://www.natureserve.org/">NatureServe</a> and/or the hyperlinks above.</p>
+<p><em>Use caution when comparing the Current and Historical ecosystem maps. The input datasets and methods are not directly comparable.</em></p>
 <p><br></p>
 </section>
 </section>
@@ -263,18 +282,27 @@ ul.task-list li input[type="checkbox"] {
 <p><br></p>
 </section>
 </section>
-<section id="general-comparisons-another-way-to-explore" class="level2">
-<h2 class="anchored" data-anchor-id="general-comparisons-another-way-to-explore">General comparisons-another way to explore</h2>
+<section id="for-the-so-inclined-other-ways-to-explore-change" class="level2">
+<h2 class="anchored" data-anchor-id="for-the-so-inclined-other-ways-to-explore-change">For the so-inclined: other ways to explore change</h2>
 <p>As noted above, making comparisons between the ‘current’ and ‘historical’ ecosystem datasets should only be done to explore trends. We “grouped” ecosystems into broader types for a exploration of past vs.&nbsp;present.</p>
-<p>In the chord diagram below, you can hover over an outer band (e.g., near the phrase ’ Past Hardwood’ on the right) to see how much of an historical area is still mapped as that type, and how much is different.</p>
-<p><strong>Some trends you might notice</strong></p>
+<section id="chord-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="chord-diagram">Chord Diagram</h3>
+<p>In the chord diagram below, you can hover over an outer band (e.g., near the phrase ‘Past Hardwood’ on the right side of the chord diagram) to see how much of a historical area is still mapped as that type, and how much is different.</p>
+<p>For example, if you hover over the outer green “Past Hardwood-Conifer” band you will see that roughly half has transitioned to “Hardwood” and a substantial portion has transitioned to “Conifer” in current mapping.</p>
+<p><strong>Some trends you might notice:</strong></p>
 <ul>
 <li>Some of the ‘past conifer’ has transitioned to ‘hardwoods’.</li>
 <li>The area of interest does not have much ‘Developed’ area mapped.</li>
 </ul>
+<p><strong>PAST</strong>                                           <strong>PRESENT</strong></p>
 <iframe src="chord.html" height="720" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external=".5">
 </iframe>
 <p><br></p>
+</section>
+</section>
+<section id="sankey-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="sankey-diagram">Sankey Diagram</h2>
+<p><br> <iframe src="sankey.html" height="550" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external=".5"></iframe></p>
 
 
 </section>

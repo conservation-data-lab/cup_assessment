@@ -20,7 +20,7 @@ library(tidygraph)
 
 ![Photo of autumn in the northern hardwoods, central UP, by Randy Swaty.](images/fall.jpg){style="float:right; margin-left: 5%; fig-align:right; width:25%;" fig-alt="\"Photo of autumnal coniferous and deciduous trees where the deciduous trees are various shades of reds, oranges and yellows."}
 
-Using [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php) data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022.  For clarity all ecosystems not mapped. Lists and quantities of all ecosystems are available by contacting Randy Swaty (rswaty@tnc.org).  
+Using [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php){target='none'} data, we mapped and quantified patterns of the most dominant ecosystems in the central Upper Peninsula as of 2022.  For clarity most dominant ecosystems were mapped (ones that covered more than 5% of the landscape). Lists and quantities of all ecosystems are available by contacting Randy Swaty (rswaty@tnc.org).  
 
 
 
@@ -28,7 +28,7 @@ Using [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php) data, we
 
 * Almost all of the area is naturally vegetated, with ~ 5% classified as 'Agricultural' and ~2% classified as 'Developed'.  
 * Just over 1/4 of the CUP is classified as [Northern Hardwoods Forest](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.1207720/Acer_saccharum_-_Betula_alleghaniensis_-_Picea_glauca_Forest_Macrogroup){target='none'}, and 1/4 as [Alkaline Conifer-Hardwood Swamp](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.723030/Laurentian-Acadian_Alkaline_Conifer-Hardwood_Swamp){target='none'}.
-* In total, ~37% is typed in various 'riparian' ecosystems.
+* In total, ~37% is typed as various 'riparian' ecosystems.
 * Broadly, the northern hardwoods forests are located more in the northern part of the region, with wetland/riparian types in the mid and southern parts.  [Jack pine-red pine](https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.899362/Pinus_banksiana_-_Pinus_resinosa_-_Quercus_ellipsoidalis_Forest_Woodland_Alliance){target='none} types are scattered throughout. 
 
 
@@ -48,6 +48,7 @@ knitr::include_graphics("images/evt.jpg")
 <br>
 
 ```{r evt chart, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6, fig.cap="Dominant ecosystems ~2022, chart created with Existing Vegetation Type data from https://landfire.gov/evt.php." }
+
 evtname <- read.csv(file = "data/evt_aoi_attributes.csv") %>%
   arrange(desc(REL_PERCENT)) %>%
   top_n(n = 7, wt = REL_PERCENT)
@@ -78,6 +79,8 @@ evtChart
 
 
 To learn more about the dataset, go to [https://landfire.gov/evt.php](https://landfire.gov/evt.php).  To explore descriptions of these types, vist the Terrestrial Ecological Systems [documentaton](https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf) by [NatureServe](https://www.natureserve.org/) and/or the hyperlinks above. 
+
+*Use caution when comparing the Current and Historical ecosystem maps.  The input datasets and methods are not directly comparable.*
 
 <br>
 
@@ -148,49 +151,59 @@ To learn about the dataset, visit [https://landfire.gov/vegetation/bps](https://
 
 <br>
 
-## General comparisons-another way to explore
+## For the so-inclined: other ways to explore change
 
 As noted above, making comparisons between the 'current' and 'historical' ecosystem datasets should only be done to explore trends.  We "grouped" ecosystems into broader types for a exploration of past vs. present. 
 
-In the chord diagram below, you can hover over an outer band (e.g., near the phrase ' Past Hardwood' on the right) to see how much of an historical area is still mapped as that type, and how much is different. 
+### Chord Diagram
 
-**Some trends you might notice**
+In the chord diagram below, you can hover over an outer band (e.g., near the phrase 'Past Hardwood' on the right side of the chord diagram) to see how much of a historical area is still mapped as that type, and how much is different. 
+
+For example, if you hover over the outer green "Past Hardwood-Conifer" band you will see that roughly half has transitioned to "Hardwood" and a substantial portion has transitioned to "Conifer" in current mapping. 
+
+**Some trends you might notice:**
 
 * Some of the 'past conifer' has transitioned to 'hardwoods'.
 * The area of interest does not have much 'Developed' area mapped.  
 
 
+**PAST** &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp; &emsp; &emsp;&emsp; &emsp;**PRESENT**
 ```{r chord, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE, fig.width=6}
 # read in data
-chord_df <- read_csv("data/bps2evt_chord.csv")
+chord_df <- read_csv("data/bps2evt_chord2.csv")
 #view(histFireGVchord)
 
 #convert to matrix
 matrix_df <- as.matrix(as_adjacency_matrix(as_tbl_graph(chord_df),attr = "ACRES"))
 
 #clean up matrix (could be cleaner!)
-matrix_df = subset(matrix_df, select = -c(1:6))
+matrix_df = subset(matrix_df, select = -c(1:8))
 
-matrix_df <- matrix_df[-c(7:15),]
+matrix_df <- matrix_df[-c(9:13),]
 
 #make a custom color pallet #eb4034 (redish) #b0af9e(grey)
 
 # ORIGINAL
-groupColors <- c( "#1d4220", # conifer 
-                 "#fc9d03", # grassland
-                 "#56bf5f", # hardwood
-                 "#397d3f", # hardwood-conifer 
-                 "#7db7c7", # riparian 
-                 "#f5e942", # cur ag
-                 "#1d4220", # cur conifer
-                 "#397d3f", # cur hdw-con
-                 "#b0af9e", # developed
-                 "#eb4034", # exotics
-                 "#fc9d03", # grassland
-                 "#56bf5f", # hardwood
-                 "#7db7c7",
-                 "#6e4f1e"# shrubland
+groupColors <- c("#f5e942", # current ag
+                 "#1d4220", # current coni
+                 "#397d3f", # current con-hard
+                 "#b0af9e", # current deve
+                 "#eb4034", # current exotics 
+                 "#fc9d03", # current grass
+                 "#56bf5f", # current hard
+                 "#7db7c7", # current riparian
+                 "#1d4220", # past coni
+                 "#fc9d03", # past grass
+                 "#56bf5f", # past hard
+                 "#397d3f", # past con-hard
+                 "#7db7c7" # past riparian
+
 )
+
+
+
+
+
 #make chord diagram
 chord <- chorddiag(data = matrix_df,
                  type = "bipartite",
@@ -218,3 +231,65 @@ htmlwidgets::saveWidget(chord,
 <iframe src="chord.html" height="720" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external=".5"></iframe>
 
 <br>
+
+
+## Sankey Diagram
+
+
+```{r sankey, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library(plotly)
+
+
+# read in snkyPdata
+snkyPdata <- read_csv("data/sankey.csv")
+
+
+nodes <- data.frame(
+         name=c(as.character(snkyPdata$source),
+         as.character(snkyPdata$target)) %>%
+          unique())
+
+nodes <- data.frame(
+  color = c("#1d4220", "#fc9d03", "#56bf5f", "#397d3f", "#7db7c7", "#f5e942", "#1d4220", "#397d3f", "#b0af9e", "#eb4034", "#fc9d03", "#56bf5f", "#7db7c7"),
+  nodes = nodes$name,
+  stringsAsFactors = FALSE
+)
+
+
+
+# add source and target fields
+snkyPdata$IDsource <- match(snkyPdata$source, nodes$nodes)-1 
+snkyPdata$IDtarget <- match(snkyPdata$target, nodes$nodes)-1
+
+# Make Sankey diagram
+sankey <- plot_ly(
+  type = "sankey",
+  orientation = "h",
+  node = list(pad = 15,
+              thickness = 20,
+              line = list(color = "black", width = 0.5),
+              label = nodes$nodes,
+              color = nodes$color,
+              hovertemplate = "Acres"),
+  link = list(source = snkyPdata$IDsource,
+              target = snkyPdata$IDtarget,
+              value = snkyPdata$value,
+              hovertemplate = "Acres"),
+  textfont = list(size = 16),
+  width = 850,
+  height = 500) %>%
+  layout(title = "Change in broad ecosystem types",
+         font = list(size = 14),
+         margin = list(t = 100, l = 20, r = 20, b = 0))
+
+sankey
+
+htmlwidgets::saveWidget(as_widget(sankey), "sankey.html")
+
+```
+
+
+
+
+<br>
+<iframe src="sankey.html" height="550" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external=".5"></iframe>
