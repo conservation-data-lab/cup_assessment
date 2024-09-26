@@ -78,7 +78,7 @@ evtChart
 <br>
 
 
-To learn more about the dataset, go to [https://landfire.gov/evt.php](https://landfire.gov/evt.php).  To explore descriptions of these types, vist the Terrestrial Ecological Systems [documentaton](https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf) by [NatureServe](https://www.natureserve.org/) and/or the hyperlinks above. 
+To learn more about the dataset, go to [https://landfire.gov/evt.php](https://landfire.gov/evt.php){target=0}.  To explore descriptions of these types, vist the Terrestrial Ecological Systems [documentaton](https://landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf){target=0} by [NatureServe](https://www.natureserve.org/){target=0} and/or the hyperlinks above. 
 
 *Use caution when comparing the Current and Historical ecosystem maps.  The input datasets and methods are not directly comparable.*
 
@@ -155,11 +155,15 @@ To learn about the dataset, visit [https://landfire.gov/vegetation/bps](https://
 
 As noted above, making comparisons between the 'current' and 'historical' ecosystem datasets should only be done to explore trends.  We "grouped" ecosystems into broader types for a exploration of past vs. present. 
 
+Below are two different ways to visualize the same data, one a circular 'Chord' diagram, the second a more linear 'Sankey' diagram. 
+
 ### Chord Diagram
 
 In the chord diagram below, you can hover over an outer band (e.g., near the phrase 'Past Hardwood' on the right side of the chord diagram) to see how much of a historical area is still mapped as that type, and how much is different. 
 
 For example, if you hover over the outer green "Past Hardwood-Conifer" band you will see that roughly half has transitioned to "Hardwood" and a substantial portion has transitioned to "Conifer" in current mapping. 
+
+**Note: the values you see when you hover over the chart are acres.  **
 
 **Some trends you might notice:**
 
@@ -233,7 +237,13 @@ htmlwidgets::saveWidget(chord,
 <br>
 
 
-## Sankey Diagram
+### Sankey Diagram
+
+As noted above this diagram presents the same data as the 'Chord' diagram, but in a more linear, left-to-right manner.  You can hover over the grey bands and colored rectangles to observe patterns such as those noted above with the chord diagram:
+
+* Historically there were 1.74M acres of Hardwoods in the past; 1.84M acres presently
+* There are ~ 241K acres of agricultural lands in the assessment area; most are on lands that were formerly mapped as 'hardwood'.
+
 
 
 ```{r sankey, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}

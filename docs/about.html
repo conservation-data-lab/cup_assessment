@@ -167,15 +167,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This web report was developed by Liv, Nick, Silas and Randy of the <a href="https://conservationdatalab.org/">Conservation Data Lab</a> and <a href="https://nmu.edu/">Northern Michigan University</a> with the following goals:</p>
+<p>This web report was developed by Liv, Nick, Silas and Randy of the <a href="https://conservationdatalab.org/" target="0">Conservation Data Lab</a> and <a href="https://nmu.edu/" target="0">Northern Michigan University</a> with the following goals:</p>
 <ul>
-<li>Support planning efforts by the <a href="https://www.co.marquette.mi.us/departments/planning/index.php">Marquette County Planning, Community Development, Forestry and Recreation Division</a></li>
+<li>Support planning efforts by the <a href="https://www.co.marquette.mi.us/departments/planning/index.php" target="0">Marquette County Planning, Community Development, Forestry and Recreation Division</a></li>
 <li>Practice GitHub, R, QGIS and ArcGIS Pro techniques</li>
 <li>Contribute to conservation in the central Upper Peninsula in general.</li>
 </ul>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>We’d like to first acknowledge Robert Zeil (aka ‘Zeke’) who introduced us to, and taught Silas how to implement the Wildfire Exposure Risk calculations. Learn more about Zeke at https://www.linkedin.com/in/robertziel/ and https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/.</p>
+<p>We’d like to first acknowledge Robert Zeil (aka ‘Zeke’) who introduced us to, and taught Silas how to implement the Wildfire Exposure Risk calculations. Learn more about Zeke at <a href="https://www.linkedin.com/in/robertziel/" target="0">https://www.linkedin.com/in/robertziel/</a> and (https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/)<span target="0">https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/</span>.</p>
 <p>We’d like to also thank Sven Gonstead and Emily Leach of Marquette County for the inspiration, opportunity and for meeting with us!</p>
 <p>And importantly, Dr.&nbsp;Matt Van Grinsven of NMU for moral, technical and space support!</p>
 </section>
@@ -232,8 +232,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="area-of-interest">Area of Interest</h3>
 <p>We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful. To create the polygon by which we completed our analysis, we:</p>
 <ol type="1">
-<li>Selected the 6 central-most counties from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">Census Bureau County Dataset (500m)</a>. Exported this data as a shapefile.</li>
-<li>Used the ‘Select by Location’ tool with the U.S. HUC 8 Watershed Boundary from <a href="https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/">Data Basin</a> and the 6 selected CUP counties as the ‘Selecting Features’. Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070).</li>
+<li>Selected the 6 central-most counties from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html" target="0">Census Bureau County Dataset (500m)</a>. Exported this data as a shapefile.</li>
+<li>Used the ‘Select by Location’ tool with the U.S. HUC 8 Watershed Boundary from <a href="https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/" target="0">Data Basin</a> and the 6 selected CUP counties as the ‘Selecting Features’. Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070).</li>
 </ol>
 </section>
 <section id="general-gis" class="level3">
@@ -243,9 +243,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="input-raster-datasets" class="level3">
 <h3 class="anchored" data-anchor-id="input-raster-datasets">Input Raster Datasets</h3>
 <ul>
-<li><a href="https://landfire.gov/vegetation/evt">LANDFIRE Existing Vegetation Type - Ecological Systems</a> (EVT) for the ‘Ecosystems’ and ‘Wildfire Exposure’ tabs.</li>
+<li><a href="https://landfire.gov/vegetation/evt" target="0">LANDFIRE Existing Vegetation Type - Ecological Systems</a> (EVT) for the ‘Ecosystems’ and ‘Wildfire Exposure’ tabs.</li>
 <li><a href="https://landfire.gov/vegetation/bps" target="none">LANDFIRE Biophysical Settings spatial data</a> (BpS) for the ‘Ecosystems’ and ‘Late Succession’ tabs.</li>
-<li><a href="https://landfire.gov/vegetation/bps-models">LANDFIRE Biophysical Settings Reference Conditions Table</a> for the ‘Late Succession’ tab.</li>
+<li><a href="https://landfire.gov/vegetation/bps-models" target="0">LANDFIRE Biophysical Settings Reference Conditions Table</a> for the ‘Late Succession’ tab.</li>
 <li><a href="https://landfire.gov/vegetation/sclass" target="none">LANDFIRE Succession Class</a> (SCLS) for the ‘Late Succession’ tab.</li>
 </ul>
 <p>All clipped datasets are available in the ‘data/spatial’ directory of the repository located <a href="https://github.com/conservation-data-lab/cup_assessment" target="none">here</a>.</p>
@@ -256,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Making of the chord diagram was a bit more involved, utilizing the following steps:</p>
 <ol type="1">
 <li>Combined the BpS and EVT spatial datasets using the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm" target="none">‘Combine’</a> tool in ArcGIS Pro.</li>
-<li>Used the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm">‘Join field’</a> tool in ArcGIS pro to attach relevant attributes.</li>
+<li>Used the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm" target="0">‘Join field’</a> tool in ArcGIS pro to attach relevant attributes.</li>
 <li>Used a Pivot Table in Excel to format and clean data to make the final chord dataset (see bps2evt_chord.csv file in the ‘data/’ directory of this <a href="https://github.com/conservation-data-lab/cup_assessment" target="none">repo</a>).</li>
 </ol>
 <p>R code for all charts available in the ‘current.qmd’ file of this repo.</p>

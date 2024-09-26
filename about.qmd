@@ -3,15 +3,15 @@ title: "About"
 format: html
 ---
 
-This web report was developed by Liv, Nick, Silas and Randy of the [Conservation Data Lab](https://conservationdatalab.org/) and [Northern Michigan University](https://nmu.edu/) with the following goals:
+This web report was developed by Liv, Nick, Silas and Randy of the [Conservation Data Lab](https://conservationdatalab.org/){target=0} and [Northern Michigan University](https://nmu.edu/){target=0} with the following goals:
 
-* Support planning efforts by the [Marquette County Planning, Community Development, Forestry and Recreation Division](https://www.co.marquette.mi.us/departments/planning/index.php) 
+* Support planning efforts by the [Marquette County Planning, Community Development, Forestry and Recreation Division](https://www.co.marquette.mi.us/departments/planning/index.php){target=0} 
 * Practice GitHub, R, QGIS and ArcGIS Pro techniques
 * Contribute to conservation in the central Upper Peninsula in general.
 
 ## Acknowledgements
 
-We'd like to first acknowledge Robert Zeil (aka 'Zeke') who introduced us to, and taught Silas how to implement the Wildfire Exposure Risk calculations.  Learn more about Zeke at https://www.linkedin.com/in/robertziel/ and https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/.
+We'd like to first acknowledge Robert Zeil (aka 'Zeke') who introduced us to, and taught Silas how to implement the Wildfire Exposure Risk calculations.  Learn more about Zeke at [https://www.linkedin.com/in/robertziel/](https://www.linkedin.com/in/robertziel/){target=0} and (https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/)[https://wildfiretoday.com/2020/05/06/robert-ziel-receives-paul-gleason-lead-by-example-award/]{target=0}.
 
 We'd like to also thank Sven Gonstead and Emily Leach of Marquette County for the inspiration, opportunity and for meeting with us!
 
@@ -61,17 +61,17 @@ Silas grew up in Madison, Wisconsin and moved to Marquette, Michigan in the fall
 ### Area of Interest
 We aimed to delineate an analysis area that would both meet planning purposes of county officials in the central Upper Peninsula of Michigan (CUP) and be ecologically meaningful.  To create the polygon by which we completed our analysis, we:
 
-1. Selected the 6 central-most counties from the [Census Bureau County Dataset (500m)](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html).  Exported this data as a shapefile.
-2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/) and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070). 
+1. Selected the 6 central-most counties from the [Census Bureau County Dataset (500m)](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html){target=0}.  Exported this data as a shapefile.
+2. Used the 'Select by Location' tool with the U.S. HUC 8 Watershed Boundary from [Data Basin](https://databasin.org/maps/0f726f5eed644715ba119446f0cec417/){target=0} and the 6 selected CUP counties as the 'Selecting Features'.  Data exported as a shapefile, projected to the NAD 1983 coordination system (WKID 5070). 
 
 ### General GIS
 For initial data processing for all tabs we clipped raster datasets to the area of interest using the ['Clip Raster'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target='none'} tool.  We retained the LANDFIRE standard projection (see [LANDFIRE Standard Projections](https://www.landfire.gov/faqs){target='none'}) and resolution.  This work was completed in [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview){target='none'}.
 
 ### Input Raster Datasets
 
-* [LANDFIRE Existing Vegetation Type - Ecological Systems](https://landfire.gov/vegetation/evt) (EVT) for the 'Ecosystems' and 'Wildfire Exposure' tabs.
+* [LANDFIRE Existing Vegetation Type - Ecological Systems](https://landfire.gov/vegetation/evt){target=0} (EVT) for the 'Ecosystems' and 'Wildfire Exposure' tabs.
 * [LANDFIRE Biophysical Settings spatial data](https://landfire.gov/vegetation/bps){target='none'} (BpS) for the 'Ecosystems' and 'Late Succession' tabs.
-* [LANDFIRE Biophysical Settings Reference Conditions Table](https://landfire.gov/vegetation/bps-models) for the 'Late Succession' tab.
+* [LANDFIRE Biophysical Settings Reference Conditions Table](https://landfire.gov/vegetation/bps-models){target=0} for the 'Late Succession' tab.
 * [LANDFIRE Succession Class](https://landfire.gov/vegetation/sclass){target='none'} (SCLS) for the 'Late Succession' tab. 
 
 All clipped datasets are available in the 'data/spatial' directory of the repository located [here](https://github.com/conservation-data-lab/cup_assessment){target='none'}.  
@@ -84,7 +84,7 @@ After datasets were clipped as noted above, we used [QGIS](https://www.qgis.org/
 Making of the chord diagram was a bit more involved, utilizing the following steps:
 
 1. Combined the BpS and EVT spatial datasets using the ['Combine'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm){target='none'} tool in ArcGIS Pro.
-2. Used the ['Join field'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm) tool in ArcGIS pro to attach  relevant attributes. 
+2. Used the ['Join field'](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/join-field.htm){target=0} tool in ArcGIS pro to attach  relevant attributes. 
 3. Used a Pivot Table in Excel to format and clean data to make the final chord dataset (see bps2evt_chord.csv file in the 'data/' directory of this [repo](https://github.com/conservation-data-lab/cup_assessment){target='none'}).
 
 R code for all charts available in the 'current.qmd' file of this repo.
