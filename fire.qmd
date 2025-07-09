@@ -18,14 +18,14 @@ Fire is a natural process that cleans forest floors, allowing more light and nut
 * The highest risk areas include:
     * A region stretching NNE from Little Lake, MI to Cascade, MI (near Goose Lake).
     * South of Ishpeming, MI, in and around Black River Falls.
-    * Several areas in the eastern portion of the assessment, such as SE of Pictured Rocks NL, the Two-Hearted River watershed (see photo below of the [Duck Lake Fire, 2012](https://en.wikipedia.org/wiki/Duck_Lake_Fire){target=0})https://www.mqtcoplan.org/community-wildfire-protection-plan and the Raco Plains.
+    * Several areas in the eastern portion of the assessment, such as SE of Pictured Rocks NL, the Two-Hearted River watershed (e.g., the [Duck Lake Fire](https://en.wikipedia.org/wiki/Duck_Lake_Fire){target=0}) and the Raco Plains.
     * Most of the area is in the lowest Wildfire Hazard Exposure Risk category (~67%). 
     
 *Additionally, we present two other datasets in addition to our calculations of Wildfire Exposure Risk, both of which largely corroborate our findings. *
 
 ### Map of Wildfire Exposure Risk 
 
-This map was created by assigning 'fire spotting probabilities' to the various current ecosystems of the area as mapped in the [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php){target=0} dataset.  After those assignments were made, we 'blended' the values for each particular spot with the surrounding area to better represent potential transmission of fire.
+This map was created by assigning 'fire spotting probabilities' to the various current ecosystems of the area as mapped in the [LANDFIRE Existing Vegetation Type](https://landfire.gov/evt.php){target=0} dataset following methods of [Beverly et al., 2021](https://link.springer.com/article/10.1007/s10980-020-01173-8)(detailed methods located [here](wfe_methods.docx)).  After those assignments were made, we 'blended' the values for each particular spot with the surrounding area to better represent potential transmission of fire.
 
 <br>
 
